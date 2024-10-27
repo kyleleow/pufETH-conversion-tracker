@@ -3,7 +3,7 @@ import { Router } from 'express';
 import { fetchConversionRate, getHistoricalConversionRates } from '../services/conversionRateService';
 import BigNumber from 'bignumber.js';
 
-export function apiRouter(): Router {
+export function conversionRateRouter(): Router {
   const router = Router();
   router.use(bodyParser.json());
 

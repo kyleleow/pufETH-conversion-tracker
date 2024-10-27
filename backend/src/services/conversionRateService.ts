@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
-import conversionRate from "../database/conversion-rate";
-import ContractABI from '../contract-abi.json'
+import conversionRate from "../database/conversionRate";
+import ContractABI from '../contractAbi.json'
 import BigNumber from "bignumber.js";
 
 export async function fetchConversionRate() {
@@ -22,5 +22,10 @@ export async function fetchConversionRate() {
 }
 
 export async function getHistoricalConversionRates() {
+  // Fetch rate once if no data
+  const count = await conversionRate.countDocuments()
+  if (count === 0) {
+    await fetchConversionRate()
+  }
   return conversionRate.find().sort({ timestamp: 'asc' }).exec();
 }

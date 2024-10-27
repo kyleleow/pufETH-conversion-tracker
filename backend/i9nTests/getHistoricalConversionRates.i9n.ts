@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import conversionRate from "../src/database/conversion-rate"
+import conversionRate from "../src/database/conversionRate"
 
 import supertest from "supertest"
 import cron from 'node-cron';

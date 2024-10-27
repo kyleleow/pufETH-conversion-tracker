@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { apiRouter } from './routes/api-router';
+import { conversionRateRouter } from './routes/conversionRateRouter';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cron from 'node-cron';
@@ -12,7 +12,7 @@ app.use(cors()); // Enable CORS for frontend interaction
 app.use(express.json());
 
 // Routes
-app.use('/api/conversion-rate', apiRouter())
+app.use('/api/conversion-rate', conversionRateRouter())
 
 // Connect to MongoDB
 if (process.env.NODE_ENV !== 'test') {
