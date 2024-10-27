@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 // Cron job
-cron.schedule('* * * * * *', async () => {
+cron.schedule('*/5 * * * *', async () => {
   console.log('Fetching conversion rate every 5 minutes...')
   const currentRate = await fetchConversionRate()
   console.log(`Done! Current rate: ${currentRate.toFixed(8)}`)
