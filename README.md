@@ -18,7 +18,7 @@ npm run dev
 ```
 All API can be accessed using [http://localhost:3000](http://localhost:3000) as the base URL
 
-Available API:
+#### Available API:
 - Fetch all historical conversion rates:  `GET /api/conversion-rate/historical`
 - Fetch current conversion rate: `GET /api/conversion-rate/current`
 
